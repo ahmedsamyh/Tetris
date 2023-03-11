@@ -1,4 +1,0 @@
-#pragma once
-namespace momo {
-bool colRectRect(Vec2 p1, Vec2 s1, Vec2 p2, Vec2 s2);
-};
