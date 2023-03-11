@@ -1,0 +1,6 @@
+#pragma once
+
+namespace momo {
+
+struct UI {};
+}; // namespace momo

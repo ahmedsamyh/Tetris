@@ -1,0 +1,44 @@
+#include <Tetris/Tetromino.hpp>
+
+Tetromino::Tetromino(Vec2 _pos) {
+  ///
+  pos = _pos;
+  setType(Type::Straight);
+};
+
+// setters
+void Tetromino::setType(Type t) {
+  type = t;
+  switch (type) {
+  case Type::Straight:
+    for (size_t i = 0; i < 4; ++i) {
+      Block b;
+      b.pos = pos + Vec2(float(i * TILE_SIZE), 0.f);
+      blocks.push_back(b);
+    }
+    break;
+  case Type::Square:
+    break;
+  case Type::T:
+    break;
+  case Type::L:
+    break;
+  case Type::Skew:
+    break;
+  default:
+    UNREACHABLE();
+    break;
+  };
+}
+
+// methods
+void Tetromino::update(float delta) {
+  for (auto &b : blocks) {
+    b.update(delta);
+  }
+};
+void Tetromino::draw() {
+  for (auto &b : blocks) {
+    b.draw();
+  }
+};
